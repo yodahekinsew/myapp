@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/myapp/static/media/cool_stuff_background1.95dc089a.JPG"
   },
   {
-    "revision": "05f58224e7761a78f09e",
+    "revision": "5018a322ace54f41efad",
     "url": "/myapp/static/css/main.16c4d3de.chunk.css"
   },
   {
@@ -56,8 +56,8 @@ self.__precacheManifest = [
     "url": "/myapp/static/media/about_me_background3_sm.ab42a4bb.png"
   },
   {
-    "revision": "05f58224e7761a78f09e",
-    "url": "/myapp/static/js/main.05f58224.chunk.js"
+    "revision": "5018a322ace54f41efad",
+    "url": "/myapp/static/js/main.5018a322.chunk.js"
   },
   {
     "revision": "fbdcf4c6850697cfdf3b2e983c598d79",
@@ -112,7 +112,7 @@ self.__precacheManifest = [
     "url": "/myapp/static/media/about_me_page_2.b5c6c33e.png"
   },
   {
-    "revision": "13725803e671cfb12b27e8ed37413876",
+    "revision": "8eb851d7a9676c1524ead744ed27de19",
     "url": "/myapp/index.html"
   }
 ];
