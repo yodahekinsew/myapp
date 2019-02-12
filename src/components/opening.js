@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux';
-import {changeShowOpening} from '../actions';
+import {changeShowOpening, changeShowOptions} from '../actions';
 import FadeIn from 'react-fade-in';
 
 const descriptors = ['"A REMARKABLE INDIVIDUAL"', '"A HUMBLE GENIUS"', '"LOVELY TO BE AROUND"', '"UNBELIEVABLY INNOVATIVE"', '"A TRUE VISIONARY"', '"TALENTED BEYOND BELIEF"', '"NEEEDLESSLY CARING"',
@@ -15,7 +15,7 @@ var counter = 0
 class Opening extends Component {
   constructor() {
     super();
-    this.state = {top: '100px', left: '100px', text: descriptors[counter], time: 1000, fontSize: 3};
+    this.state = {top: '100px', left: '100px', text: descriptors[counter], time: 1000, fontSize: 3,};
   }
 
   textChanger = (time) => {
@@ -23,7 +23,7 @@ class Opening extends Component {
       counter += 1
       this.setState({text: descriptors[counter]})
       if (descriptors[counter] !== 'YODAHE ALEMU') {
-        let previousTime = this.state.time
+        let previousTime = this.state.time;
         let previousFontSize = this.state.fontSize;
         this.setState({time: previousTime/1.1})
         this.setState({fontSize: previousFontSize+1})
@@ -32,22 +32,21 @@ class Opening extends Component {
       if (descriptors[counter] === 'YODAHE ALEMU') {
         let previousFontSize = this.state.fontSize;
         this.setState({fontSize: previousFontSize+3})
-        console.log(this.props.showForeground)
-        this.props.changeShowOpening(false)
-        console.log(this.props.showForeground)
+        this.props.changeShowOpening(false);
+        setTimeout(()=>{this.props.changeShowOptions(true)},1000);
       }
     }, time)
   }
 
   componentDidMount() {
-    this.textChanger(this.state.time)
+    this.textChanger(this.state.time);
   }
 
   render() {
     return (
       <div style={{position: 'absolute', height:'100vh',width:'100vw'}}>
         <div className="background">
-          <header className = "background-text" style={{fontFamily: 'Times New Roman', color:'white', fontSize: `${this.state.fontSize}vh`}} >{this.state.text}</header>
+          <header className = "background-text" style={{fontFamily: 'monospace', color:'black', fontSize: `${this.state.fontSize}vh`}} >{this.state.text}</header>
         </div>
       </div>
     );
@@ -60,6 +59,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapActionsToProps = {changeShowOpening}
+const mapActionsToProps = {changeShowOpening, changeShowOptions}
 
 export default connect(mapStateToProps, mapActionsToProps)(Opening)

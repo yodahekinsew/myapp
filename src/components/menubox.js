@@ -1,8 +1,8 @@
 import React, { Component} from 'react';
-import HomeMenu from '../img/home_menu_1.PNG';
-import AboutMeMenu from '../img/about_me_menu_1.png';
-import CoolStuffMenu from '../img/cool_stuff_menu_1.PNG';
-import HireMeMenu from '../img/hire_me_menu_1.PNG';
+import HomeMenu from '../img/home_menu.png';
+import AboutMeMenu from '../img/about_me_menu.png';
+import CoolStuffMenu from '../img/cool_stuff_menu.png';
+import HireMeMenu from '../img/hire_me_menu.png';
 import posed from "react-pose";
 import styled from "styled-components";
 import { connect } from 'react-redux';

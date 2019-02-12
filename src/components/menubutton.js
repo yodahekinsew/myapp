@@ -1,7 +1,6 @@
 import React, { Component} from 'react';
 import '../App.css';
 import Button from './button.js';
-import MenuIcon from '../img/menu_icon.png';
 import { connect } from 'react-redux';
 import {changeTab, changeShowMenu, changeMenuButton} from '../actions';
 import posed from "react-pose";
@@ -17,31 +16,59 @@ const Box = styled(posed.div({
   display: flex;
   flex-direction: column;
   position: fixed;
+  align-items: center;
 `;
 
-const Icon = styled(posed.div({
-  '<': {transform: 'rotateY(180deg)'},
-  '>': {transform: 'rotateY(0deg)'}
+const Line1 = styled(posed.div({
+  '<': {transform: 'rotate(45deg)', marginTop:'1.25vh'},
+  '>': {transform: 'rotate(0deg)', marginTop:'0vh'}
 }))`
+  positon: absolute;
+  height: .5vh;
+  width: 2.5vw;
+  background-color: white;
 `;
 
-const icon_image = <img alt="" src={MenuIcon} style={{width:'2vw', marginLeft:'.5vw', position:'absolute',backgroundAttachment: 'fixed', backfaceVisibility: 'hidden', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}/>
+const Line2 = styled(posed.div({
+  '<': {marginTop:'3.5vh',},
+  '>': {marginTop:'1.25vh',}
+}))`
+  position: absolute;
+  height: .5vh;
+  width: 2.5vw;
+  background-color: white;
+`;
+
+const Line3 = styled(posed.div({
+  '<': {transform: 'rotate(-45deg)', marginTop:'1.25vh'},
+  '>': {transform: 'rotate(0deg)', marginTop:'2.5vh'}
+}))`
+  position: absolute;
+  height: .5vh;
+  width: 2.5vw;
+  background-color: white;
+`;
 
 class MenuButton extends Component {
   render() {
     return (
       <Box pose={this.props.menuButton}>
-        <Icon pose={this.props.menuButton}>
-        <Button style={{color: 'white', fontSize:'5vmin', outline: 'none', outlineOffset: 'none', marginTop:'45vh'}} text={icon_image}
-        func={()=>{
-          if (this.props.menuButton === '<') {
-            this.props.changeShowMenu('closed')
-            this.props.changeMenuButton('>')
-          } else if (this.props.menuButton === '>') {
-            this.props.changeShowMenu('open')
-            this.props.changeMenuButton('<')
-          }}}/>
-        </Icon>
+        <Button
+          style={{marginTop:'1vh'}}
+          text={
+            <div style={{display:'flex', position:'relative', flexDirection:'column', height:'3vh', width:'2.5vw'}}>
+              <Line1 pose={this.props.menuButton} />
+              <Line2 pose={this.props.menuButton} />
+              <Line3 pose={this.props.menuButton} />
+            </div>}
+          func={()=>{
+            if (this.props.menuButton === '<') {
+              this.props.changeShowMenu('closed')
+              this.props.changeMenuButton('>')
+            } else if (this.props.menuButton === '>') {
+              this.props.changeShowMenu('open')
+              this.props.changeMenuButton('<')
+            }}}/>
       </Box>
     );
   }

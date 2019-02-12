@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import {changeTab, changeShowMenu} from '../actions';
 import SoundCloutInfo from './soundcloutinfo.js';
 import FreeSpeachInfo from './freespeachinfo.js';
+import OtherSideInfo from './othersideinfo.js';
 import Menu from './menu.js';
 
 const background1 = <img alt="" src={Background1} style={{height:'100vh',width:'100vw', position:'absolute',backgroundAttachment: 'fixed', backfaceVisibility: 'hidden', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}/>
@@ -37,6 +38,7 @@ class CoolStuff extends Component {
         <div style={{marginTop:'100vh'}}>
         <SoundCloutInfo />
         <FreeSpeachInfo />
+        <OtherSideInfo />
         </div>
       </div>
     );

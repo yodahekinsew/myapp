@@ -11,9 +11,12 @@ class FreeSpeachInfo extends Component {
     return (
       <div style={{backgroundColor: '#a2a2a2', height:'100vh', width:'100vw'}}>
         {FreeSpeechIcon}
-        <div style={{marginLeft:'10vw', paddingTop:'20vh', fontSize:'5vmin'}}>
-          <pre style={{backgroundColor:'white', height:'70vh', width:'70vw'}}>
+        <div style={{position:'relative', marginLeft:'10vw', paddingTop:'20vh', fontSize:'5vmin'}}>
+          <pre style={{position:'absolute', backgroundColor:'white', height:'70vh', width:'80vw'}}>
             In Development...
+          </pre>
+          <pre style={{position:'absolute', color:'white', backgroundColor:'black', display:'inline', border:'1px solid black', height:'70vh', width:'20vw', marginLeft:'60vw'}}>
+            Description...
           </pre>
         </div>
       </div>
